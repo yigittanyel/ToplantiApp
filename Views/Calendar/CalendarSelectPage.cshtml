@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Calendar select page";
+    Layout = null;
+}
+
+<div class="calendar-select-form">
+    <h2 style="margin-bottom: 40px;">Select calendar</h2>
+    Â
+    @using (Html.BeginForm("Index", "Calendar"))
+    {
+        <div class="display-settings-item">
+            @Html.DropDownList("calendarId", (List<SelectListItem>)ViewBag.Calendars)
+            <button type="submit">Display</button>
+        </div>
+    }
+</div>

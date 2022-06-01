@@ -1,0 +1,152 @@
+﻿@model ToplantiApp.Models.Toplanti
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: auto; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="row" style="margin-top:75px;" id="ortala">
+        <div class="column" id="column1" @*style="background-color:#d8a5a5"*@>
+            <img src="~/Images/logo.png" id="logo"  class="center" /><br />
+            <h1 style="text-align:center;font-size:70px;margin-top:130px;">@ViewBag.odaAdi </h1>
+        </div>
+        <div class="column" id="column2" >
+
+            <div class="container" style="margin-top:5px;margin-left:10px;">
+                <h3><span style="font-weight:700;"> Düzenleyen:</span>&nbsp; @Model.Duzenleyen</h3><hr />
+                <h3><span style="font-weight:700;">Konu:</span>&nbsp; @Model.ToplantiKonusu</h3><hr />
+                <h3><span style="font-weight:700;">Başlangıç Saati:</span>&nbsp; @Model.BaslangicSaati</h3><hr />
+                <h3><span style="font-weight:700;">Bitiş Saati:</span>&nbsp; @Model.BitisSaati</h3>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .touch{
+
+        }
+        #logo {
+            width: 40%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:-65px;
+
+
+        }
+        body {
+            background-image: url('../../Images/kozahan.jpg');
+            background-repeat: no-repeat;
+            background-color: #10520054
+        }
+        #column1 {
+            background-color: #10520054
+        }
+        .row{
+
+            color:white;
+        }
+/*
+        #column2 {
+            background-color: #d8a5a5ac;
+        }*/
+        
+    </style>
+    @*<script>
+        setInterval("settime()", 1000);
+
+        function settime() {
+            var dateTime = new Date();
+            var hour = dateTime.getHours();
+            var minute = dateTime.getMinutes();
+            var second = dateTime.getSeconds();
+
+            if (minute < 10)
+                minute = "0" + minute;
+
+            if (second < 10)
+                second = "0" + second;
+
+            var time = "" + hour + ":" + minute + ":" + second;
+
+            document.getElementById("clock").value = time;
+        }
+    </script>*@
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div style="text-align:center;margin-top:50px;">
+        <h3 style="color:black;">Düzenleyen: @Model.Duzenleyen</h3>
+    </div>
+    <div style="text-align:center;margin-top:30px;">
+        <h3 style="color:black;">Konu: @Model.ToplantiKonusu</h3>
+    </div>
+    <div style="text-align:center;margin-top:30px;">
+        <span style="font-weight:bold;"> Tarih: </span><input type="text" id="clock" />
+
+    </div>*@
+@*<table class="table table-bordered" style="font-size:25px; margin-top:80px;">
+
+        <thead>
+            <tr>
+                <th scope="col">Düzenleyen</th>
+                <th scope="col">Konu</th>
+                <th scope="col">Başlangıç</th>
+                <th scope="col">Bitiş</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Duzenleyen</td>
+                <td>@Model.ToplantiKonusu</td>
+                <td>@Model.BaslangicSaati</td>
+                <td>@Model.BitisSaati</td>
+            </tr>
+
+        </tbody>
+    </table>*@

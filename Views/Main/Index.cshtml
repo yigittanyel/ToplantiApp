@@ -1,0 +1,95 @@
+﻿@model ToplantiApp.ViewModels.OdaAndToplanti
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 500px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h2 style="text-align:center;">TOPLANTIYA HOŞ GELDİNİZ</h2>
+
+    <div class="row" id="ortala">
+        <div class="column" style="background-color:#aaa;">
+            <img src="~/Images/logo.png" id="logo" class="center" /><br />
+            <h3 style="margin-top:80px;text-align:center;">Toplantı Odası: @ViewBag.odaAdi </h3>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <div style="text-align:center;margin-top:50px;">
+                <span style="font-weight:bold;"> Tarih: </span><input type="text" id="clock" />
+
+            </div>
+
+            <h3>Katılımcı Listesi: </h3>
+            <table class="table table-bordered">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Ad</th>
+                        <th scope="col">Soyad</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        #logo {
+            width: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 80px;
+        }
+    </style>
+    <script>
+        setInterval("settime()", 1000);
+
+        function settime() {
+            var dateTime = new Date();
+            var hour = dateTime.getHours();
+            var minute = dateTime.getMinutes();
+            var second = dateTime.getSeconds();
+
+            if (minute < 10)
+                minute = "0" + minute;
+
+            if (second < 10)
+                second = "0" + second;
+
+            var time = "" + hour + ":" + minute + ":" + second;
+
+            document.getElementById("clock").value = time;
+        }
+    </script>
+</body>
+</html>
